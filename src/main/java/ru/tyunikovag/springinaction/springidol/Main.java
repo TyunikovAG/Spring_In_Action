@@ -7,7 +7,7 @@ public class Main {
 
     public static void main(String[] args) throws PerfomanceException {
         ApplicationContext context = new ClassPathXmlApplicationContext("app.xml");
-        Juggler juggler = context.getBean("duke", Juggler.class);
-        juggler.perform();
+        PoeticJuggler poeticJuggler = context.getBean("poeticDuke", PoeticJuggler.class);
+        poeticJuggler.perform();
     }
 }

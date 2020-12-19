@@ -6,7 +6,14 @@
            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
     <bean id="duke" class="ru.tyunikovag.springinaction.springidol.Juggler">
-        <constructor-arg value="3"/>
+        <constructor-arg value="15"/>
+    </bean>
+
+    <bean id="sonet29" class="ru.tyunikovag.springinaction.springidol.Sonnet29"/>
+
+    <bean id="poeticDuke" class="ru.tyunikovag.springinaction.springidol.PoeticJuggler">
+        <constructor-arg value="7"/>
+        <constructor-arg ref="sonet29"/>
     </bean>
 
 </beans>
