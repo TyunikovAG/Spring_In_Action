@@ -3,7 +3,7 @@ package ru.tyunikovag.springinaction.springidol;
 public class Ticket {
 
     private static int number;
-    private int price;
+    private final int price;
 
     public Ticket(int price) {
         number++;

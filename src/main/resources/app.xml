@@ -25,4 +25,11 @@
         <constructor-arg ref="sonnet29"/>
     </bean>
 
+    <bean id="piano" class="ru.tyunikovag.springinaction.springidol.Piano"/>
+
+    <bean id="kenny" class="ru.tyunikovag.springinaction.springidol.Instrumentalist">
+        <property name="song" value="Yellow submarine"/>
+        <property name="instrument" ref="piano"/>
+    </bean>
+
 </beans>
