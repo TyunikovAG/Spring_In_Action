@@ -1,5 +1,7 @@
 package ru.tyunikovag.springinaction.springidol;
 
+import ru.tyunikovag.springinaction.springidol.instruments.Instrument;
+
 public class Instrumentalist implements Performer{
 
     private String song;
