@@ -1,4 +1,7 @@
-package ru.tyunikovag.springinaction.springidol;
+package ru.tyunikovag.springinaction.springidol.people;
+
+import ru.tyunikovag.springinaction.springidol.exeptions.PerfomanceException;
+import ru.tyunikovag.springinaction.springidol.Poem;
 
 public class PoeticJuggler extends Juggler {
 

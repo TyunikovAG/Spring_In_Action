@@ -1,8 +1,9 @@
-package ru.tyunikovag.springinaction.springidol;
+package ru.tyunikovag.springinaction.springidol.people;
 
+import ru.tyunikovag.springinaction.springidol.exeptions.PerfomanceException;
 import ru.tyunikovag.springinaction.springidol.instruments.Instrument;
 
-public class Instrumentalist implements Performer{
+public class Instrumentalist implements Performer {
 
     private String song;
     private Instrument instrument;

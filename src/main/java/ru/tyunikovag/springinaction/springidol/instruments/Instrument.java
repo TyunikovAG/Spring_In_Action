@@ -1,6 +1,8 @@
-package ru.tyunikovag.springinaction.springidol;
+package ru.tyunikovag.springinaction.springidol.instruments;
 
-public interface Instrument {
+public abstract class Instrument {
 
-    void play();
+    final String NOTA = "\u266B";
+
+    public abstract void play();
 }

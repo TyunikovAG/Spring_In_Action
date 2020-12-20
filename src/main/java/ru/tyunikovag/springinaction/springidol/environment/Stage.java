@@ -1,4 +1,4 @@
-package ru.tyunikovag.springinaction.springidol;
+package ru.tyunikovag.springinaction.springidol.environment;
 
 public class Stage {
 

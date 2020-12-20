@@ -1,35 +1,48 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:p="http://www.springframework.org/schema/p"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
-    <bean id="stage" class="ru.tyunikovag.springinaction.springidol.Stage"
+    <bean id="stage" class="ru.tyunikovag.springinaction.springidol.environment.Stage"
           factory-method="createStage">
     </bean>
 
-    <bean id="ticket" class="ru.tyunikovag.springinaction.springidol.Ticket"
+    <bean id="ticket" class="ru.tyunikovag.springinaction.springidol.environment.Ticket"
           scope="prototype">
         <constructor-arg value="100"/>
     </bean>
 
-    <bean id="duke" class="ru.tyunikovag.springinaction.springidol.Juggler">
+    <bean id="duke" class="ru.tyunikovag.springinaction.springidol.people.Juggler">
         <constructor-arg value="15"/>
     </bean>
 
     <bean id="sonnet29" class="ru.tyunikovag.springinaction.springidol.Sonnet29"/>
 
-    <bean id="poeticDuke" class="ru.tyunikovag.springinaction.springidol.PoeticJuggler">
+    <bean id="poeticDuke" class="ru.tyunikovag.springinaction.springidol.people.PoeticJuggler">
         <constructor-arg value="7"/>
         <constructor-arg ref="sonnet29"/>
     </bean>
 
-    <bean id="piano" class="ru.tyunikovag.springinaction.springidol.Piano"/>
+    <bean id="piano" class="ru.tyunikovag.springinaction.springidol.instruments.Piano"/>
+    <bean id="sax" class="ru.tyunikovag.springinaction.springidol.instruments.Saxophone"/>
 
-    <bean id="kenny" class="ru.tyunikovag.springinaction.springidol.Instrumentalist">
-        <property name="song" value="Yellow submarine"/>
-        <property name="instrument" ref="piano"/>
+    <bean id="kenny" class="ru.tyunikovag.springinaction.springidol.people.Instrumentalist"
+          p:song="Jangle Bells">
+        <!--<property name="song" value="Yellow submarine"/>-->
+        <property name="instrument" ref="sax"/>
+    </bean>
+
+    <bean id="hank" class="ru.tyunikovag.springinaction.springidol.people.OneManBandArray">
+        <property name="instruments">
+            <list>
+                <bean class="ru.tyunikovag.springinaction.springidol.instruments.Saxophone"/>
+                <bean class="ru.tyunikovag.springinaction.springidol.instruments.Cimball"/>
+                <bean class="ru.tyunikovag.springinaction.springidol.instruments.Piano"/>
+            </list>
+        </property>
     </bean>
 
 </beans>
