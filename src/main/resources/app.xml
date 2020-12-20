@@ -26,13 +26,14 @@
         <constructor-arg ref="sonnet29"/>
     </bean>
 
+    <bean id="saxophone" class="ru.tyunikovag.springinaction.springidol.instruments.Saxophone"/>
+    <bean id="cimball" class="ru.tyunikovag.springinaction.springidol.instruments.Cimball"/>
     <bean id="piano" class="ru.tyunikovag.springinaction.springidol.instruments.Piano"/>
-    <bean id="sax" class="ru.tyunikovag.springinaction.springidol.instruments.Saxophone"/>
 
     <bean id="kenny" class="ru.tyunikovag.springinaction.springidol.people.Instrumentalist"
           p:song="Jangle Bells">
         <!--<property name="song" value="Yellow submarine"/>-->
-        <property name="instrument" ref="sax"/>
+        <property name="instrument" ref="saxophone"/>
     </bean>
 
     <bean id="hank" class="ru.tyunikovag.springinaction.springidol.people.OneManBandArray">
@@ -42,6 +43,16 @@
                 <bean class="ru.tyunikovag.springinaction.springidol.instruments.Cimball"/>
                 <bean class="ru.tyunikovag.springinaction.springidol.instruments.Piano"/>
             </list>
+        </property>
+    </bean>
+
+    <bean id="mapper" class="ru.tyunikovag.springinaction.springidol.people.OneManBandMap">
+        <property name="instruments">
+            <map>
+                <entry key="Saxophone" value-ref="saxophone"/>
+                <entry key="Cimball" value-ref="cimball"/>
+                <entry key="Piano" value-ref="piano"/>
+            </map>
         </property>
     </bean>
 
